@@ -1,9 +1,9 @@
 module.exports = {
     pathPrefix: "/3d-cooking",
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
+        title: `3d cooking`,
+        description: `3d models baked using blender`,
+        author: `Duke d'Anjou`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -12,6 +12,13 @@ module.exports = {
             options: {
                 name: `images`,
                 path: `${__dirname}/src/images`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `blender`,
+                path: `${__dirname}/src/blender`,
             },
         },
         `gatsby-transformer-sharp`,
