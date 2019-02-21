@@ -10,7 +10,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 const styles = theme => ({
     image: {
         maxWidth: `300px`,
-        marginBottom: `1.45rem`
+        margin: 'auto'
     }
 });
 
