@@ -4,22 +4,33 @@ import {Link} from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import withRoot from "../withRoot";
+import withStyles from "@material-ui/core/styles/withStyles";
+
+const styles = theme => ({
+    image: {
+        maxWidth: `300px`,
+        marginBottom: `1.45rem`
+    }
+});
 
 class IndexPage extends Component {
 
     render() {
+
+        const {classes} = this.props
+
         return <Layout>
             <SEO title="Home" keywords={[`gatsby`, `application`, `react`]}/>
             <h1>Hi people</h1>
             <p>Welcome to your new Gatsby site.</p>
             <p>Now go build something great.</p>
-            <div style={{maxWidth: `300px`, marginBottom: `1.45rem`}}>
+            <div className={classes.image}>
                 <Image/>
             </div>
-            <Link to="/pageTest/">Go to page 2</Link>
-            <Link to="/pageTest/">Go to test</Link>
+            <Link to="/dataTest/">Go to page 2</Link>
         </Layout>
     }
 }
 
-export default IndexPage
+export default withRoot(withStyles(styles)(IndexPage));
