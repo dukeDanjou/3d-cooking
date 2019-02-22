@@ -17,6 +17,7 @@
     "gatsby-transformer-sharp": "^2.1.13",
     "prop-types": "^15.7.2",
     "react": "^16.8.2",
+    "react-3d-viewer": "^1.0.12",
     "react-dom": "^16.8.2",
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1"

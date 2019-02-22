@@ -2,11 +2,14 @@ import React, {Component} from 'react'
 import {graphql} from 'gatsby'
 import * as PropTypes from "prop-types";
 import Layout from "../components/layout";
+import withRoot from "../withRoot";
 
 class DataTest extends Component {
 
     render() {
-        return <Layout>{this.props.data.site.siteMetadata.description}</Layout>
+        return <Layout>
+            {this.props.data.site.siteMetadata.description}
+        </Layout>
     }
 }
 
@@ -21,4 +24,5 @@ export const query = graphql`
         }
     }
 `
-export default DataTest
+
+export default withRoot(DataTest)
