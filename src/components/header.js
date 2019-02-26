@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -39,10 +38,5 @@ class Header extends Component {
         </div>
     }
 }
-
-AppBar.propTypes = {
-    classes: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired
-};
 
 export default withStyles(styles)(Header);

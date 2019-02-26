@@ -1,11 +1,3 @@
-const lowerCase = str => str.toLowerCase()
-
-const toSnakeCase = (string) => {
-    return string.replace(/^[A-Z]/g, lowerCase)
-                 .replace(/([A-Z])/g, '-$1')
-                 .toLocaleLowerCase()
-}
-
 const path = require("path")
 
 // Implement the Gatsby API “createPages”. This is called once the
@@ -40,7 +32,7 @@ exports.createPages = ({graphql, actions}) => {
                 // Create pages for each markdown file.
                 result.data.allFile.edges.forEach(({node}) => {
 
-                    const pageName = toSnakeCase(node.name)
+                    const pageName = node.name
 
                     createPage({
                         path: `blender/${pageName}`,
@@ -48,6 +40,7 @@ exports.createPages = ({graphql, actions}) => {
                         // In your blog post template's graphql query, you can use path
                         // as a GraphQL variable to query for data from the markdown file.
                         context: {
+                            title: pageName,
                             url: node.publicURL
                         },
                     })
